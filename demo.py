@@ -28,7 +28,7 @@ def classify_article(article):
 
 
 
-main = gr.Interface(
+demo = gr.Interface(
     title="News Classification",
     fn=classify_article,
     inputs = Textbox(lines=10, label="Enter an article"),
@@ -36,4 +36,4 @@ main = gr.Interface(
 )
 
 
-main.launch()
+demo.launch()
