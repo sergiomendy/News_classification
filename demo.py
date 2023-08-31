@@ -19,8 +19,9 @@ def get_score_color(score):
     
 
 def classify_article(article):
-    pipe = pipeline("text-classification", model = model,tokenizer = tokenizer)
-    result = pipe(article)[0]
+    classifier = pipeline("text-classification", model = model,tokenizer = tokenizer)
+    result = classifier(article, truncation=True)[0]
+
     predicted_label = result.get("label")
     score = result.get("score")
     score_color = get_score_color(score)
